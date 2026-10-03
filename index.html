@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5f8, #ffd1e1, #fff4da);
+  color: #84274b;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -80px;
+  animation: rise linear infinite;
+  color: #e74e87;
+  opacity: 0;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: .65; }
+  85% { opacity: .4; }
+  100% {
+    transform: translateY(-120vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  padding: 35px 18px;
+  margin: auto;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 66px);
+  margin: 20px 0;
+}
+
+.intro {
+  font-size: 21px;
+  line-height: 1.7;
+}
+
+.photo-button {
+  display: block;
+  width: min(100%, 520px);
+  margin: 30px auto;
+  padding: 12px;
+  background: white;
+  border: 3px solid #d8ae68;
+  border-radius: 28px;
+  cursor: pointer;
+  box-shadow: 0 15px 45px #a72c5930;
+  transition: transform .3s;
+}
+
+.photo-button:hover {
+  transform: scale(1.02);
+}
+
+.photo-button:focus-visible {
+  outline: 4px solid #84274b;
+  outline-offset: 5px;
+}
+
+.photo-button img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.photo-button span {
+  display: block;
+  padding: 18px 5px 8px;
+  font: bold 19px Georgia, serif;
+  color: #84274b;
+}
+
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 35px 0;
+}
+
+blockquote {
+  margin: 0;
+  padding: 25px 20px;
+  font-size: 20px;
+  line-height: 1.7;
+  background: #ffffffc9;
+  border-radius: 22px;
+  border-top: 3px solid #d8ae68;
+  box-shadow: 0 8px 25px #a72c5915;
+}
+
+.video-section {
+  max-width: 800px;
+  margin: 35px auto;
+  padding: 20px;
+  background: #ffffffdd;
+  border-radius: 24px;
+}
+
+.video-section[hidden] {
+  display: none;
+}
+
+.video-wrap {
+  aspect-ratio: 16 / 9;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #111;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-help {
+  font: 14px/1.6 Arial, sans-serif;
+}
+
+a { color: #84274b; }
+
+.closing {
+  font-size: 24px;
+  line-height: 1.8;
+  margin: 40px 0;
+}
+
+@media (max-width: 700px) {
+  .quotes { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart { display: none; }
+  .photo-button { transition: none; }
+}
+</style>
+</head>
+
+<body>
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<main>
+  <h1>Our Love Story ❤️</h1>
+
+  <p class="intro">
+    Two hearts. One beautiful connection.<br>
+    My favorite place is in your arms.
+  </p>
+
+  <button
+    class="photo-button"
+    id="lovePhoto"
+    type="button"
+    aria-controls="videoSection"
+    aria-expanded="false"
+  >
+    <img src="love.png" alt="Jermaine and Rae hugging">
+    <span id="photoLabel">❤️ Click our picture to play our song 🎶</span>
+  </button>
+
+  <section
+    class="video-section"
+    id="videoSection"
+    aria-label="Our song"
+    hidden
+  >
+    <h2>Our Song 🎶❤️</h2>
+    <div class="video-wrap" id="videoWrap"></div>
+    <p class="video-help">
+      If the song doesn’t start, press play inside the video.
+      <br>
+      <a
+        href="https://youtu.be/OIKC2ggCed4"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Open on YouTube</a>
+    </p>
+  </section>
+
+  <section class="quotes" aria-label="Love quotes">
+    <blockquote>
+      💕<br>
+      “Every hug from you feels like coming home.”
+    </blockquote>
+
+    <blockquote>
+      🌹<br>
+      “My favorite memories begin with you.”
+    </blockquote>
+
+    <blockquote>
+      💖<br>
+      “Your smile makes ordinary days beautiful.”
+    </blockquote>
+
+    <blockquote>
+      ✨<br>
+      “A little laughter, a little patience, and a whole lot of love.”
+    </blockquote>
+
+    <blockquote>
+      💞<br>
+      “Let’s keep choosing each other, one day at a time.”
+    </blockquote>
+
+    <blockquote>
+      ❤️<br>
+      “With you, even the quiet moments mean everything.”
+    </blockquote>
+  </section>
+
+  <p class="closing">
+    “Of all the places I could be,<br>
+    close to you is my favorite.” ❤️
+  </p>
+</main>
+
+<script>
+const hearts = document.getElementById("hearts");
+const symbols = ["♥", "💕", "💗", "💖"];
+
+for (let i = 0; i < 30; i++) {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = symbols[i % symbols.length];
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.fontSize = 18 + Math.random() * 30 + "px";
+  heart.style.animationDuration = 12 + Math.random() * 12 + "s";
+  heart.style.animationDelay = -Math.random() * 24 + "s";
+  hearts.appendChild(heart);
+}
+
+const photo = document.getElementById("lovePhoto");
+const section = document.getElementById("videoSection");
+let started = false;
+
+photo.addEventListener("click", () => {
+  section.hidden = false;
+  photo.setAttribute("aria-expanded", "true");
+
+  if (!started) {
+    const video = document.createElement("iframe");
+    video.title = "Our love song";
+    video.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    video.allowFullscreen = true;
+    video.referrerPolicy = "strict-origin-when-cross-origin";
+    video.src =
+      "https://www.youtube.com/embed/OIKC2ggCed4" +
+      "?autoplay=1&playsinline=1&loop=1" +
+      "&playlist=OIKC2ggCed4&rel=0";
+
+    document.getElementById("videoWrap").appendChild(video);
+    document.getElementById("photoLabel").textContent =
+      "❤️ Click to see our song 🎶";
+    started = true;
+  }
+
+  section.scrollIntoView({
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
+    block: "center"
+  });
+});
+</script>
+</body>
+</html>
